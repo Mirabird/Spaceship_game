@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52a9414818fe154297f2acfd8496b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffectPrefab: {fileID: 1141330259687333427, guid: 6718dc24203da53468af9ada8fef7d6d, type: 3}
 --- !u!1 &313975623
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52a9414818fe154297f2acfd8496b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffectPrefab: {fileID: 1141330259687333427, guid: 6718dc24203da53468af9ada8fef7d6d, type: 3}
 --- !u!1 &340709476
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52a9414818fe154297f2acfd8496b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffectPrefab: {fileID: 1141330259687333427, guid: 6718dc24203da53468af9ada8fef7d6d, type: 3}
 --- !u!1 &1008265755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageEffect: {fileID: 340709478}
   damageAlpha: 0.25
+  damageFadeSpeed: 0.4
 --- !u!1 &1553924594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52a9414818fe154297f2acfd8496b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffectPrefab: {fileID: 1141330259687333427, guid: 6718dc24203da53468af9ada8fef7d6d, type: 3}
 --- !u!1 &1757846472
 GameObject:
   m_ObjectHideFlags: 0
