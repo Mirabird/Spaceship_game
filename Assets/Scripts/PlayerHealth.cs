@@ -1,15 +1,17 @@
 using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
-    public float currentHealth, maxHealth, damageAmount;
+    public int currentHealth, maxHealth, damageAmount;
+    public HealthBar healthBar;
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(currentHealth);
     }
-    
     public void DealDamage()
     {
         currentHealth -= damageAmount;
+        healthBar.SetHealth(currentHealth;
 
         if (currentHealth <= 0)
         {
