@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,11 +12,19 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage()
     {
         currentHealth -= damageAmount;
-        healthBar.SetHealth(currentHealth;
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
             Debug.Log("Player is dead");  //die, restart or effect
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Killer")
+        {
+            //die, level restart
+            Debug.Log("Player is died");
         }
     }
 }
