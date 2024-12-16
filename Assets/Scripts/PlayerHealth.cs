@@ -1,5 +1,4 @@
-using System;
-using UnityEngine;
+ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int currentHealth, maxHealth, damageAmount;
@@ -12,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage()
     {
         currentHealth -= damageAmount;
+        UIController.instance.ShowDamage();
         healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
