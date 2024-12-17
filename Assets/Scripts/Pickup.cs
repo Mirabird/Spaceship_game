@@ -7,15 +7,25 @@ public class Pickup : MonoBehaviour
     public Text scoreText;
     void Start()
     {
-        scoreText.text = "SCORE: 0";
+        if (scoreText != null)
+        {
+            scoreText.text = "SCORE: 0";
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Coin")
         {
-            Instantiate(pickupEffect, transform.position, transform.rotation);
+            other.enabled = false;
+            if (pickupEffect != null)
+                {
+                    Instantiate(pickupEffect, transform.position, transform.rotation);
+                }
             coins++;
-            scoreText.text = "SCORE:" + coins;
+            if (scoreText != null)
+            {
+                scoreText.text = "SCORE:" + coins; 
+            }
             Destroy(other.gameObject);
         }
     }
