@@ -1,4 +1,5 @@
  using UnityEngine;
+ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int currentHealth, maxHealth, damageAmount;
@@ -16,14 +17,15 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Player is dead");  //die, restart or effect
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);    //die, restart level or effect
+            Debug.Log("Player is dead");  
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Killer")
         {
-            //die, level restart
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   //die, level restart
             Debug.Log("Player is died");
         }
     }

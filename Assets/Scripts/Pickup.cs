@@ -16,17 +16,17 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-            other.enabled = false;
+            other.GetComponent<Collider>().enabled = false;
             if (pickupEffect != null)
                 {
                     Instantiate(pickupEffect, transform.position, transform.rotation);
                 }
+            Destroy(other.gameObject);
             coins++;
             if (scoreText != null)
             {
                 scoreText.text = "SCORE:" + coins; 
             }
-            Destroy(other.gameObject);
         }
     }
 }
