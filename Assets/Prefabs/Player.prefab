@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e5a7c9397ca0b4fb8c7b6e4f6249c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardspeed: 150
+  forwardspeed: 100
   speed: 50
   rotationSpeed: 100
   maxTiltAngle: 30
