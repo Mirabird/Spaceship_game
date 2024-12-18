@@ -5,6 +5,7 @@ public class LevelMechanics : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.instance.StopBgm();
             GameManager.instance.ShowGameOver();
             Debug.Log("Level is restarting");
         }

@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            AudioManager.instance.StopBgm();
             GameManager.instance.ShowGameOver();
             Debug.Log("Player is dead");  
         }
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Killer")
         {
+            AudioManager.instance.StopBgm();
             GameManager.instance.ShowGameOver();
             Debug.Log("Player is died");
         }
