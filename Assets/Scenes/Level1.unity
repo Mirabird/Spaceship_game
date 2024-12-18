@@ -21850,6 +21850,10 @@ PrefabInstance:
       propertyPath: gameOverscreen
       value: 
       objectReference: {fileID: 926609002}
+    - target: {fileID: 8867872891117880131, guid: 52b8b42dfc1c79648a0e4338f359f054, type: 3}
+      propertyPath: forwardspeed
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
