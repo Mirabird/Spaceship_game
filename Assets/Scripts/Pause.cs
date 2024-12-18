@@ -34,4 +34,9 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.pause = false;  
     }
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f; 
+    }
 }
