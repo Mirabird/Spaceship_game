@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
+            AudioManager.instance.PlaySfx(0);
             other.GetComponent<Collider>().enabled = false;
             if (pickupEffect != null)
                 {

@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage()
     {
         currentHealth -= damageAmount;
+        AudioManager.instance.PlaySfx(1);
         UIController.instance.ShowDamage();
         healthBar.SetHealth(currentHealth);
 
