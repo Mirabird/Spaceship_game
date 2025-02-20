@@ -9,6 +9,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(currentHealth);
     }
+    public void KillPlayer()
+    {
+        currentHealth = 0;
+        healthBar.SetHealth(currentHealth);
+        AudioManager.instance.StopBgm();
+        GameManager.instance.ShowGameOver();
+        Debug.Log("Player is dead");
+    }
     public void DealDamage()
     {
         currentHealth -= damageAmount;
