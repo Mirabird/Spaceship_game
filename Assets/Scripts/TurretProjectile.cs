@@ -1,21 +1,20 @@
 using UnityEngine;
-
 public class TurretProjectile : MonoBehaviour
 {
     public int damage = 10;
 
-    // Снаряд движется в сторону игрока
+    // The projectile is moving towards the player
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Наносим урон игроку
+            // Dealing damage to the player
             collision.gameObject.GetComponent<PlayerHealth>().DealDamage();
-            Destroy(gameObject);  // Уничтожить снаряд после столкновения
+            Destroy(gameObject);  
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);  // Уничтожить снаряд при столкновении с препятствием
+            Destroy(gameObject);  // Destroy the projectile when it collides with an obstacle
         }
     }
 }

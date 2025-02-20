@@ -45,27 +45,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.022198
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.96
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.063278
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -131,6 +131,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 7402630027048431620}
   fireRate: 2
+  rotationSpeed: 15
 --- !u!4 &5238796003022003133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ebb626bd476502d4a8f06cb688a5edd2, type: 3}
