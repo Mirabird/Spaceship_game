@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = this;
+            instance = this; 
         }
         else
         {
@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour
         {
             health += 10;
             UpgradePoints--;
+            UIController.instance.UpdateUI();
             return true;
         }
         return false;
@@ -45,25 +46,20 @@ public class PlayerStats : MonoBehaviour
         {
             damage += 5;
             UpgradePoints--;
+            UIController.instance.UpdateUI();
             return true;
         }
         return false;
     }
-
     public bool TryUpgradeSpeed()
     {
         if (UpgradePoints > 0)
         {
             speed += 1f;
             UpgradePoints--;
+            UIController.instance.UpdateUI();
             return true;
         }
         return false;
     }
-
-    // public void IncreaseLevel()
-    // {
-    //     level++;  
-    //     UIController.instance.UpdateLevelText(level);  
-    // }
 }

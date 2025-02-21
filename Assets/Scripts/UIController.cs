@@ -7,13 +7,17 @@ public class UIController : MonoBehaviour
     public static UIController instance;
 
     public Text healthText;
-    //public Text levelText;
     public Text upgradePointsText;
-    
     
     public Image damageEffect;
     public float damageAlpha = 0.25f;
-
+    
+    public Button upgradeHealthButton;
+    public Button upgradeDamageButton;
+    public Button upgradeSpeedButton;
+    public Button openUpgradePanelButton;
+    
+    public GameObject upgradePanel;
     private void Awake()
     {
         if (instance == null)
@@ -25,31 +29,28 @@ public class UIController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void Start()
     {
         UpdateUI();
-    }
-    
-    public void OnUpgradeHealthButtonClicked()
-    {
-        PlayerHealth playerHealth = PlayerHealth.instance;
         
-        playerHealth.UpgradeHealth();
+        upgradeHealthButton.onClick.AddListener(UpgradeHealth);
+        upgradeDamageButton.onClick.AddListener(UpgradeDamage);
+        upgradeSpeedButton.onClick.AddListener(UpgradeSpeed);
+        
+        openUpgradePanelButton.onClick.AddListener(ToggleUpgradePanel);
     }
     
+    // public void OnUpgradeHealthButtonClicked()
+    // {
+    //     PlayerHealth playerHealth = PlayerHealth.instance;
+    //     
+    //     playerHealth.UpgradeHealth();
+    // }
     public void UpdateUI()
     {
         healthText.text = "Health: " + PlayerStats.instance.health;
-        //levelText.text = "Damage: " + PlayerStats.instance.damage;
         upgradePointsText.text = "Upgrade Points: " + PlayerStats.instance.UpgradePoints;
     }
-    
-    // public void UpdateLevelText(int level)
-    // {
-    //     levelText.text = "Level: " + level.ToString();  
-    // }
-    
     public void UpgradeHealth()
     {
         if (PlayerStats.instance.TryUpgradeHealth())
@@ -57,7 +58,6 @@ public class UIController : MonoBehaviour
             UpdateUI(); 
         }
     }
-    
     public void UpgradeDamage()
     {
         if (PlayerStats.instance.TryUpgradeDamage())
@@ -65,7 +65,6 @@ public class UIController : MonoBehaviour
             UpdateUI(); 
         }
     }
-    
     public void UpgradeSpeed()
     {
         if (PlayerStats.instance.TryUpgradeSpeed())
@@ -73,7 +72,6 @@ public class UIController : MonoBehaviour
             UpdateUI();  
         }
     }
-    
     public void ShowDamage()
     {
         if (damageEffect != null)
@@ -95,5 +93,14 @@ public class UIController : MonoBehaviour
         }
         damageEffect.color = targetColor; 
     }
-
+    public void ToggleUpgradePanel()
+    {
+        upgradePanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void CloseUpgradePanel()
+    {
+        upgradePanel.SetActive(false); 
+        Time.timeScale = 1f; 
+    }
 }
