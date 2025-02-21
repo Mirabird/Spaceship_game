@@ -5,8 +5,8 @@ public class Turret : MonoBehaviour
     public Transform player;           // Player
     public GameObject projectilePrefab; // Projectile
     public Transform firePoint;        // FirePoint
-    public float fireRate = 10f;        // FireRate
-    public float rotationSpeed = 30f;   // RotationSpeed
+    public float fireRate = 3f;        // FireRate
+    public float rotationSpeed = 60f;   // RotationSpeed
     
     private float fireCooldown;        // FireCooldown
     void Update()
@@ -35,10 +35,28 @@ public class Turret : MonoBehaviour
     {
         if (player != null)
         {
-            // Creating a projectile from the firePoint position with its current rotation
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            Vector3 direction = (player.position - firePoint.position).normalized;
-            projectile.GetComponent<Rigidbody>().velocity = direction * 10f;
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            projectile.transform.parent = null;
+            
+            Rigidbody playerRb = player.GetComponent<Rigidbody>();
+            
+            Vector3 shotDirection = (player.position - firePoint.position).normalized;
+            
+            if (playerRb != null)
+            {
+                float projectileSpeed = 20f; 
+                float distance = Vector3.Distance(firePoint.position, player.position);
+                float timeToTarget = distance / projectileSpeed; 
+                
+                Vector3 futurePosition = player.position + playerRb.velocity * timeToTarget;
+                shotDirection = (futurePosition - firePoint.position).normalized;
+            }
+            
+            projectile.transform.forward = shotDirection;
+            
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.velocity = shotDirection * 20f;
         }
     }
 }

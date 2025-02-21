@@ -12,9 +12,5 @@ public class TurretProjectile : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().DealDamage();
             Destroy(gameObject);  
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);  // Destroy the projectile when it collides with an obstacle
-        }
     }
 }
