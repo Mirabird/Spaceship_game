@@ -4,7 +4,6 @@ public class Menu : MonoBehaviour
 {
     public string levelName;
     public string creditsName;
-    
     public void StartGame()
     {
         SceneManager.LoadScene(levelName);
@@ -14,7 +13,6 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(creditsName);
     }
-
     public void LeaveGame()
     {
         Application.Quit();

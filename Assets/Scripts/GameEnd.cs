@@ -6,5 +6,4 @@ public class GameEnd : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
- 
 }

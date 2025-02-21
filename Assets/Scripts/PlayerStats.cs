@@ -1,12 +1,10 @@
 using UnityEngine;
-
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats instance;
 
     public int health = 100;
     public int damage = 10;
-    public float speed = 5f;
     public int UpgradePoints { get; private set; }
     public int level = 1;  
 
@@ -21,13 +19,23 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    public float GetSpeed()
+    {
+        if (PlayerMovement.instance != null)
+        {
+            return PlayerMovement.instance.forwardspeed;
+        }
+        else
+        {
+            Debug.LogError("PlayerMovement instance is null!");
+            return 0f; 
+        }
+    }
     public void AddUpgradePoints(int points)
     {
         UpgradePoints += points;
         UIController.instance.UpdateUI();
     }
-
     public bool TryUpgradeHealth()
     {
         if (UpgradePoints > 0)
@@ -39,7 +47,6 @@ public class PlayerStats : MonoBehaviour
         }
         return false;
     }
-
     public bool TryUpgradeDamage()
     {
         if (UpgradePoints > 0)
@@ -55,9 +62,10 @@ public class PlayerStats : MonoBehaviour
     {
         if (UpgradePoints > 0)
         {
-            speed += 1f;
+            PlayerMovement.instance.forwardspeed += 10f;  
+            Debug.Log("Speed upgraded: " + PlayerMovement.instance.forwardspeed); 
             UpgradePoints--;
-            UIController.instance.UpdateUI();
+            UIController.instance.UpdateUI();  
             return true;
         }
         return false;

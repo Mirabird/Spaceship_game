@@ -16,7 +16,6 @@ public class Credits : MonoBehaviour
         {
             creditScreen.SetActive(true);
         }
-        
         yield return new WaitForSeconds(15f);
         SceneManager.LoadScene("MainMenu");
     }

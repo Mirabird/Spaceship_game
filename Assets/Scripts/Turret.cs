@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Turret : MonoBehaviour
 {
     public Transform player;           // Player
@@ -11,14 +10,11 @@ public class Turret : MonoBehaviour
     private float fireCooldown;        // FireCooldown
     void Update()
     {
-        // Turn the turret towards the player
         if (player != null)
         {
-            // the direction of the player
             Vector3 direction = player.position - transform.position;
             direction.y = 0f;
             
-            // Defining the target rotation
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
@@ -30,7 +26,6 @@ public class Turret : MonoBehaviour
             fireCooldown = 1f / fireRate;
         }
     }
-    // function for shooting at the player
     void FireAtPlayer()
     {
         if (player != null)
@@ -51,9 +46,7 @@ public class Turret : MonoBehaviour
                 Vector3 futurePosition = player.position + playerRb.velocity * timeToTarget;
                 shotDirection = (futurePosition - firePoint.position).normalized;
             }
-            
             projectile.transform.forward = shotDirection;
-            
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
             rb.useGravity = false;
             rb.velocity = shotDirection * 20f;

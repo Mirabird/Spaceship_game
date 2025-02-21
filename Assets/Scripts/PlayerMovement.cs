@@ -1,12 +1,25 @@
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
-    public float forwardspeed =10f;
-    public float speed = 10f;
-    private Rigidbody rb;
+    public static PlayerMovement instance;
     
-    public float rotationSpeed = 100f; // rotation
+    public float forwardspeed =70f;
+    public float speed = 50f;
+    private Rigidbody rb;
+    public float rotationSpeed = 100f; 
     public float maxTiltAngle = 30f;
+    
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();

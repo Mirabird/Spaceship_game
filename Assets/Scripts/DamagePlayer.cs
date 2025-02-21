@@ -1,9 +1,7 @@
 using UnityEngine;
-
 public class DamagePlayer : MonoBehaviour
 {
     public GameObject damageEffectPrefab;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

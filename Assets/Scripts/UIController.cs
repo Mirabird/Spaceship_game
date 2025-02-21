@@ -9,6 +9,9 @@ public class UIController : MonoBehaviour
     public Text healthText;
     public Text upgradePointsText;
     
+    public Text damageText;  
+    public Text speedText;   
+    
     public Image damageEffect;
     public float damageAlpha = 0.25f;
     
@@ -39,17 +42,12 @@ public class UIController : MonoBehaviour
         
         openUpgradePanelButton.onClick.AddListener(ToggleUpgradePanel);
     }
-    
-    // public void OnUpgradeHealthButtonClicked()
-    // {
-    //     PlayerHealth playerHealth = PlayerHealth.instance;
-    //     
-    //     playerHealth.UpgradeHealth();
-    // }
     public void UpdateUI()
     {
         healthText.text = "Health: " + PlayerStats.instance.health;
         upgradePointsText.text = "Upgrade Points: " + PlayerStats.instance.UpgradePoints;
+        damageText.text = "Damage: " + PlayerStats.instance.damage;  
+        speedText.text = "Speed: " + PlayerStats.instance.GetSpeed();
     }
     public void UpgradeHealth()
     {

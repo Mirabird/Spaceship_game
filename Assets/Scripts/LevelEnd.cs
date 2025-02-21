@@ -6,7 +6,6 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           // PlayerStats.instance.IncreaseLevel();  
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentScene + 1); 
         }

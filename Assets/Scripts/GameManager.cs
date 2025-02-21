@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
             gameOverscreen.SetActive(true);
             gameOverScoreText.text = "SCORE: " + _pickupScript.coins;
             Time.timeScale = 0f;
+            UIController.instance.openUpgradePanelButton.gameObject.SetActive(false);
         }
         else
         {
