@@ -1,53 +1,99 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+
 public class UIController : MonoBehaviour
 {
-    public Image damageEffect;
-    public float damageAlpha = 0.25f;
-    public float damageFadeSpeed = 0.4f;
     public static UIController instance;
 
-    // UI for Statistics
     public Text healthText;
-    public Text levelText;
+    //public Text levelText;
     public Text upgradePointsText;
+    
+    
+    public Image damageEffect;
+    public float damageAlpha = 0.25f;
 
     private void Awake()
     {
-        instance = this;
-    }
-
-    void Update()
-    {
-        if (damageEffect.color.a != 0)
+        if (instance == null)
         {
-            damageEffect.color = new Color(damageEffect.color.r, damageEffect.color.g, damageEffect.color.b,
-                Mathf.MoveTowards(damageEffect.color.a, 0f, damageFadeSpeed * Time.deltaTime));
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
+    private void Start()
+    {
+        UpdateUI();
+    }
+    
+    public void OnUpgradeHealthButtonClicked()
+    {
+        PlayerHealth playerHealth = PlayerHealth.instance;
+        
+        playerHealth.UpgradeHealth();
+    }
+    
+    public void UpdateUI()
+    {
+        healthText.text = "Health: " + PlayerStats.instance.health;
+        //levelText.text = "Damage: " + PlayerStats.instance.damage;
+        upgradePointsText.text = "Upgrade Points: " + PlayerStats.instance.UpgradePoints;
+    }
+    
+    // public void UpdateLevelText(int level)
+    // {
+    //     levelText.text = "Level: " + level.ToString();  
+    // }
+    
+    public void UpgradeHealth()
+    {
+        if (PlayerStats.instance.TryUpgradeHealth())
+        {
+            UpdateUI(); 
+        }
+    }
+    
+    public void UpgradeDamage()
+    {
+        if (PlayerStats.instance.TryUpgradeDamage())
+        {
+            UpdateUI(); 
+        }
+    }
+    
+    public void UpgradeSpeed()
+    {
+        if (PlayerStats.instance.TryUpgradeSpeed())
+        {
+            UpdateUI();  
+        }
+    }
+    
     public void ShowDamage()
     {
-        damageEffect.color = new Color(damageEffect.color.r, damageEffect.color.g, damageEffect.color.b,
-            damageAlpha);
+        if (damageEffect != null)
+        {
+            StartCoroutine(FadeDamageEffect());
+        }
+    }
+    private IEnumerator FadeDamageEffect()
+    {
+        float elapsedTime = 0f;
+        Color originalColor = damageEffect.color;
+        Color targetColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+
+        while (elapsedTime < 1f)
+        {
+            damageEffect.color = Color.Lerp(originalColor, targetColor, elapsedTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        damageEffect.color = targetColor; 
     }
 
-    // Updating of the Statistics of the player
-    // public void UpdatePlayerStats(int currentHealth, int level, int upgradePoints)
-    // {
-    //     if (healthText != null)
-    //     {
-    //         healthText.text = "Health: " + currentHealth;
-    //     }
-    //
-    //     if (levelText != null)
-    //     {
-    //         levelText.text = "Level: " + level;
-    //     }
-    //
-    //     if (upgradePointsText != null)
-    //     {
-    //         upgradePointsText.text = "Upgrade Points: " + upgradePoints;
-    //     }
-    // }
 }
