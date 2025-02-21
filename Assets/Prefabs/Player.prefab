@@ -2035,7 +2035,7 @@ Transform:
   - {fileID: 7811634970885398327}
   - {fileID: 566010426834304856}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6742273639099335741
 Rigidbody:
@@ -2076,9 +2076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e5a7c9397ca0b4fb8c7b6e4f6249c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardspeed: 100
+  forwardspeed: 70
   speed: 50
-  rotationSpeed: 100
+  rotationSpeed: 50
   maxTiltAngle: 30
 --- !u!114 &7426564858909300521
 MonoBehaviour:
@@ -2094,9 +2094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 3
-  damageAmount: 1
+  damageAmount: 10
   healthBar: {fileID: 0}
-  gameOverscreen: {fileID: 0}
 --- !u!65 &8168733175116188575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2112,7 +2111,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
