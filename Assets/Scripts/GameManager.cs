@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
     
     private Pickup _pickupScript;
     public Text gameOverScoreText;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -21,34 +23,35 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _pickupScript = FindObjectOfType<Pickup>(); 
-        
+
         if (_pickupScript == null)
         {
-            Debug.LogError("Pickup script not found in the scene!");
+            Debug.LogError("Pickup script not found in the scene! Make sure it's in the scene and active.");
         }
-        
+    
         if (gameOverscreen == null)
         {
-            Debug.LogError("GameOverScreen is not assigned in the inspector!");
-        }
-
-        if (gameOverScoreText == null)
-        {
-            Debug.LogError("GameOverScoreText is not assigned in the inspector!");
+            Debug.LogError("GameOverScreen is not assigned in the inspector! Assign it to GameManager.");
         }
     }
+    
     public void ShowGameOver()
     {
-        if (_pickupScript != null)
+        if (_pickupScript == null)
+        {
+            _pickupScript = FindObjectOfType<Pickup>(); 
+        }
+
+        if (_pickupScript != null && gameOverscreen != null)
         {
             gameOverscreen.SetActive(true);
             gameOverScoreText.text = "SCORE: " + _pickupScript.coins;
             Time.timeScale = 0f;
-            UIController.instance.openUpgradePanelButton.gameObject.SetActive(false);
         }
         else
         {
-            Debug.LogError("Cannot show game over screen because Pickup is null!");
+            Debug.LogError($"Cannot show game over screen because Pickup ({_pickupScript}) or GameOverScreen ({gameOverscreen}) is null!");
         }
     }
+
 }

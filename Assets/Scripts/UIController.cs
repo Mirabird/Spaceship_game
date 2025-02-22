@@ -26,6 +26,7 @@ public class UIController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -39,16 +40,29 @@ public class UIController : MonoBehaviour
         upgradeHealthButton.onClick.AddListener(UpgradeHealth);
         upgradeDamageButton.onClick.AddListener(UpgradeDamage);
         upgradeSpeedButton.onClick.AddListener(UpgradeSpeed);
-        
         openUpgradePanelButton.onClick.AddListener(ToggleUpgradePanel);
     }
     public void UpdateUI()
     {
-        healthText.text = "Health: " + PlayerStats.instance.health;
-        upgradePointsText.text = "Upgrade Points: " + PlayerStats.instance.UpgradePoints;
-        damageText.text = "Damage: " + PlayerStats.instance.damage;  
-        speedText.text = "Speed: " + PlayerStats.instance.GetSpeed();
+        if (PlayerStats.instance == null)
+        {
+            Debug.LogError("PlayerStats.instance is NULL!");
+            return;
+        }
+
+        if (healthText != null) healthText.text = "Health: " + PlayerStats.instance.health;
+        else Debug.LogError("healthText is not assigned!");
+
+        if (upgradePointsText != null) upgradePointsText.text = "Upgrade Points: " + PlayerStats.instance.UpgradePoints;
+        else Debug.LogError("upgradePointsText is not assigned!");
+
+        if (damageText != null) damageText.text = "Damage: " + PlayerStats.instance.damage;
+        else Debug.LogError("damageText is not assigned!");
+
+        if (speedText != null) speedText.text = "Speed: " + PlayerStats.instance.GetSpeed();
+        else Debug.LogError("speedText is not assigned!");
     }
+
     public void UpgradeHealth()
     {
         if (PlayerStats.instance.TryUpgradeHealth())

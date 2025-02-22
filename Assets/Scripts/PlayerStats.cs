@@ -12,7 +12,9 @@ public class PlayerStats : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = this; 
+            instance = this;
+            Debug.Log("PlayerStats initialized");
+            DontDestroyOnLoad(gameObject);      
         }
         else
         {

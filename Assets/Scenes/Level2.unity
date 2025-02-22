@@ -2032,6 +2032,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
+--- !u!1 &353381883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036887539754746539, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
+  m_PrefabInstance: {fileID: 353381882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &353381884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4799247205625872533, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
+  m_PrefabInstance: {fileID: 353381882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &353381885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 503427036274239084, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
+  m_PrefabInstance: {fileID: 353381882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21370dcd499cd524ca4f2423621c8754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &353381886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4537943197877792390, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
+  m_PrefabInstance: {fileID: 353381882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &370539883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370539884}
+  - component: {fileID: 370539885}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370539884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370539883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 365.00003, y: 223.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370539885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370539883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364734a7a4da5b542880a56b57b7850f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 10
+  level: 1
 --- !u!4 &378050956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3832767527151271283, guid: cefed4ed23f90ba4a9bb35fa85b3054c, type: 3}
@@ -6130,7 +6215,7 @@ PrefabInstance:
     - target: {fileID: 2791003481912180516, guid: 52b8b42dfc1c79648a0e4338f359f054, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 353381886}
     - target: {fileID: 6321146661067379184, guid: 52b8b42dfc1c79648a0e4338f359f054, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6138,7 +6223,7 @@ PrefabInstance:
     - target: {fileID: 7426564858909300521, guid: 52b8b42dfc1c79648a0e4338f359f054, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 353381885}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9615,8 +9700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e6e49896cc7ef43b55d0b2379097a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverscreen: {fileID: 0}
-  gameOverScoreText: {fileID: 0}
+  gameOverscreen: {fileID: 353381883}
+  gameOverScoreText: {fileID: 353381884}
 --- !u!4 &2134352661
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ public class Pause : MonoBehaviour
 {
     public GameObject pauseScreen;
     public bool isPaused;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -32,11 +33,22 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
-        AudioListener.pause = false;  
+        AudioListener.pause = false;
+
+        if (GameManager.instance != null && GameManager.instance.gameOverscreen != null)
+        {
+            GameManager.instance.gameOverscreen.SetActive(false);
+        }
     }
     public void RestartButton()
     {
+        Time.timeScale = 1f;
+    
+        if (GameManager.instance != null && GameManager.instance.gameOverscreen != null)
+        {
+            GameManager.instance.gameOverscreen.SetActive(false);
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f; 
     }
 }

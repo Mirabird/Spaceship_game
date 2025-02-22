@@ -17,10 +17,21 @@ public class PlayerHealth : MonoBehaviour
     }
     void Start()
     {
+        if (PlayerStats.instance == null)
+        {
+            Debug.LogError("PlayerStats.instance is NULL in PlayerHealth!");
+            return;
+        }
+
         maxHealth = PlayerStats.instance.health;
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+
+        if (healthBar != null) 
+            healthBar.SetMaxHealth(maxHealth);
+        else 
+            Debug.LogError("healthBar is not assigned in PlayerHealth!");
     }
+
     public void DealDamage()
     {
         currentHealth -= damageAmount;
