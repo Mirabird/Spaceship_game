@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 3287941536668814397}
   m_Layer: 0
   m_Name: StarSparrow_Weapon
-  m_TagString: Untagged
+  m_TagString: SciFiBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 5119598980039040067}
   m_Layer: 0
   m_Name: StarSparrow_Core
-  m_TagString: Untagged
+  m_TagString: PlaneNose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,9 +510,10 @@ GameObject:
   - component: {fileID: 2623504450498300085}
   - component: {fileID: 7601414210277504946}
   - component: {fileID: 7929502479092747121}
+  - component: {fileID: 128205567607910947}
   m_Layer: 0
   m_Name: StarSparrow_Plasma
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,6 +584,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &128205567607910947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115442875332448148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5939448, y: 1.0692673, z: 4.120879}
+  m_Center: {x: -0.6133801, y: 0, z: 0}
 --- !u!1 &2173862764772070282
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +703,7 @@ GameObject:
   - component: {fileID: 900015681265599406}
   m_Layer: 0
   m_Name: StarSparrow_Fin
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -871,7 +893,7 @@ GameObject:
   - component: {fileID: 2347289680526102252}
   m_Layer: 0
   m_Name: StarSparrow_Wing
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -958,7 +980,7 @@ GameObject:
   - component: {fileID: 7508229688619637209}
   m_Layer: 0
   m_Name: StarSparrow_Fin
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1042,7 +1064,7 @@ GameObject:
   - component: {fileID: 4298388925408093895}
   m_Layer: 0
   m_Name: StarSparrow_Weapon
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,9 +1309,10 @@ GameObject:
   - component: {fileID: 5288263672785898133}
   - component: {fileID: 4364916269415203482}
   - component: {fileID: 5751825857829006105}
+  - component: {fileID: 6380226201622666610}
   m_Layer: 0
   m_Name: StarSparrow_Plasma
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1360,6 +1383,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6380226201622666610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964679371468117050}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.345487, y: 1.0692673, z: 4.120879}
+  m_Center: {x: 0.48915124, y: 0, z: 0}
 --- !u!1 &3755638544869535298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2079,7 @@ Transform:
   - {fileID: 7811634970885398327}
   - {fileID: 566010426834304856}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6742273639099335741
 Rigidbody:
@@ -2198,7 +2242,7 @@ GameObject:
   - component: {fileID: 6784814132992119558}
   m_Layer: 0
   m_Name: StarSparrow_Weapon
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2441,7 +2485,7 @@ GameObject:
   - component: {fileID: 2087774384332281523}
   m_Layer: 0
   m_Name: StarSparrow_Weapon
-  m_TagString: Untagged
+  m_TagString: SciFiBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2686,7 +2730,7 @@ GameObject:
   - component: {fileID: 4638264334389507262}
   m_Layer: 0
   m_Name: StarSparrow_Wing
-  m_TagString: Untagged
+  m_TagString: Wing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -73,5 +73,16 @@ public class PlayerHealth : MonoBehaviour
             GameManager.instance.ShowGameOver();
             Debug.Log("Player is dead");
         }
+        else if (collision.gameObject.CompareTag("SciFiBuilding"))
+        {
+            AudioManager.instance.StopBgm();
+            GameManager.instance.ShowGameOver();
+            Debug.Log("Player collided with building or plane nose - Game Over");
+        }
+        else if (collision.gameObject.CompareTag("Wing"))
+        {
+            TakeDamage(3);
+            Debug.Log("Player damaged by wing");
+        }
     }
 }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Killer
   - Coin
+  - Building
+  - SciFiBuilding
+  - Wing
+  - PlaneNose
   layers:
   - Default
   - TransparentFX
