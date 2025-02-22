@@ -1027,14 +1027,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2300893482151226273, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585178833386766150, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2682759691081906777, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1117,42 +1109,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682759691081906777, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3319753547148451647, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4014328119307434388, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5122224109288233623, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5714325989768819053, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5860172734898557677, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015388553822119047, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7036887539754746539, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567165934847676879, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004931514172443735, guid: 0742359ef730dc44e96eadb485c7b9b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
