@@ -74,8 +74,10 @@ public class UIController : MonoBehaviour
     {
         if (PlayerStats.instance.TryUpgradeDamage())
         {
-            UpdateUI(); 
+            UpdateUI();  
         }
+        
+        damageText.text = "Damage: " + PlayerStats.instance.damage;
     }
     public void UpgradeSpeed()
     {
@@ -91,6 +93,7 @@ public class UIController : MonoBehaviour
             StartCoroutine(FadeDamageEffect());
         }
     }
+
     private IEnumerator FadeDamageEffect()
     {
         float elapsedTime = 0f;

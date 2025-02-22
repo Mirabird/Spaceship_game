@@ -21,6 +21,17 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public void ResetStats()
+    {
+        health = 100;
+        damage = 10;
+        UpgradePoints = 0;
+        level = 1;
+        
+        PlayerMovement.instance.forwardspeed = 70f; 
+        UIController.instance.UpdateUI();
+    }
     public float GetSpeed()
     {
         if (PlayerMovement.instance != null)
@@ -60,6 +71,7 @@ public class PlayerStats : MonoBehaviour
         }
         return false;
     }
+    
     public bool TryUpgradeSpeed()
     {
         if (UpgradePoints > 0)
@@ -68,8 +80,9 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Speed upgraded: " + PlayerMovement.instance.forwardspeed); 
             UpgradePoints--;
             UIController.instance.UpdateUI();  
-            return true;
+            return true; 
         }
         return false;
     }
+
 }

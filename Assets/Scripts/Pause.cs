@@ -42,13 +42,27 @@ public class Pause : MonoBehaviour
     }
     public void RestartButton()
     {
-        Time.timeScale = 1f;
-    
+        if (PlayerStats.instance != null)
+        {
+            PlayerStats.instance.ResetStats();
+        }
+
+        if (PlayerHealth.instance != null)
+        {
+            PlayerHealth.instance.UpdateHealth(); 
+        }
+
+        UIController.instance.UpdateUI();
+        
         if (GameManager.instance != null && GameManager.instance.gameOverscreen != null)
         {
             GameManager.instance.gameOverscreen.SetActive(false);
         }
-
+    
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    
+        Time.timeScale = 1f;
+    } 
+
+
 }

@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -52,6 +54,21 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError($"Cannot show game over screen because Pickup ({_pickupScript}) or GameOverScreen ({gameOverscreen}) is null!");
         }
+    }
+    public void RestartButton()
+    {
+        if (PlayerStats.instance != null)
+        {
+            PlayerStats.instance.ResetStats();
+        }
+        
+        UIController.instance.UpdateUI();
+        
+        gameOverscreen.SetActive(false);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        Time.timeScale = 1f;
     }
 
 }

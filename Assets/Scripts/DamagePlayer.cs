@@ -9,10 +9,13 @@ public class DamagePlayer : MonoBehaviour
             Debug.Log("We collided with spaceship");
 
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            
-            playerHealth.TakeDamage(10);  
-            
+        
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(10); 
+            }
             Instantiate(damageEffectPrefab, transform.position, Quaternion.identity);
         }
     }
+
 }

@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
 
         maxHealth = PlayerStats.instance.health;
         currentHealth = maxHealth;
+        
+        damageAmount = PlayerStats.instance.damage;
 
         if (healthBar != null) 
             healthBar.SetMaxHealth(maxHealth);
@@ -50,7 +52,11 @@ public class PlayerHealth : MonoBehaviour
     {
         PlayerStats.instance.health -= damage;
         UpdateHealth();
+        damageAmount = PlayerStats.instance.damage;  
+        UIController.instance.UpgradeDamage(); 
         UIController.instance.ShowDamage();
+        
+        UIController.instance.damageText.text = "Damage: " + PlayerStats.instance.damage;
     }
     public void UpdateHealth()
     {
@@ -81,8 +87,16 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Wing"))
         {
-            TakeDamage(3);
+            damageAmount -= 1;  
+            UIController.instance.UpgradeDamage(); 
+
+            TakeDamage(3); 
             Debug.Log("Player damaged by wing");
         }
+        else if (collision.gameObject.CompareTag("SciFiBuilding"))
+            {
+                TakeDamage(10); 
+                Debug.Log("Player collided with building - Damage applied");
+            }
     }
 }
