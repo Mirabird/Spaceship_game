@@ -6,7 +6,7 @@
 ---
 
 ## 📥 Скачать игру
-Скачать последнюю версию билда можно [здесь](https://drive.google.com/file/d/16jYUrS-aJEcE1jZXVOiZN-6WAELSH8t8/view?usp=sharing).  
+Скачать последнюю версию билда можно [здесь](https://drive.google.com/file/d/1IeHmjYNVSGm0jpZlIeWqOes1lY8P5kvf/view?usp=sharing).  
 
 ---
 
